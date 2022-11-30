@@ -1,0 +1,802 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static '/css/root.css' %}">
+{% endblock css %}
+{% block content %}
+    <!-- products filter -->
+    <div class="filter-div">
+        <a href="#" id="filter-btn">filter</a>
+        <i class='bx bx-chevrons-down'></i>
+    </div>
+    <aside class="sidebar-container">
+        <div class="row">
+            <div class="box">
+                <span class="filter-header">
+                    Categories
+                </span>
+                <ul class="filter-list">
+                    <li><a href="#">men</a></li>
+                    <li><a href="#">women</a></li>
+                    <li><a href="#">accessorie</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <span class="filter-header">
+                    size
+                </span>
+                <ul class="filter-list">
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="status1">
+                            <label for="status1">
+                                xs
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="status2">
+                            <label for="status2">
+                                s
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="status3">
+                            <label for="status3">
+                                m
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="status4">
+                            <label for="status4">
+                                l
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="status5">
+                            <label for="status5">
+                                xl
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <span class="filter-header">
+                    Colors
+                </span>
+                <ul class="filter-list">
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="remember1">
+                            <label for="remember1">
+                                Red
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="remember2">
+                            <label for="remember2">
+                                Blue
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="remember3">
+                            <label for="remember3">
+                                White
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="remember4">
+                            <label for="remember4">
+                                Pink
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="remember5">
+                            <label for="remember5">
+                                Yellow
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <span class="filter-header">
+                    sort by
+                </span>
+                <ul class="filter-list">
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="sort1">
+                            <label for="sort1">
+                                featured
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="sort2">
+                            <label for="sort2">
+                                newest
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="group-checkbox">
+                            <input type="checkbox" id="sort3">
+                            <label for="sort3">
+                                best selling
+                                <i class='bx bx-x' style='color:#7b7979' ></i>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <span class="filter-header">
+                    Price
+                </span>
+                    <div class="range-slider">
+                      <span class="rangeValues"></span>
+                      <input value="0" min="0" max="5000" step="50" type="range">
+                      <input value="5000" min="0" max="5000" step="50" type="range">
+                    </div>
+                  
+            </div>
+        </div>
+        </div>
+    </aside>
+<!-- end products filter -->
+
+<!-- product card -->
+<div class="container-product">
+    {% comment %} <div class="product-card">
+        <span class="price">$100.00</span>
+        <a class="popup-btn" >Quick View</a>
+        <img src="./img/15 (2).jpg" class="product-img" alt="">
+     </div>  {% endcomment %}
+     {% comment %} <div class="popup-view">
+        <div class="popup-card">
+           <a><i class="fas fa-times close-btn"></i></a>
+           <div class="popup-row">
+              <div class="col">
+                 <div class="slider">
+                    <div class="products">
+                       <div class="container-slider-popup">
+                          <!-- Full-width images with number text -->
+                          <div class="mySlides">
+                             <div class="numbertext">1 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">2 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">3 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">4 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">5 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">6 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <!-- Next and previous buttons -->
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          <!-- Thumbnail images -->
+                          <div class="row-mini">
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="col">
+                 <div class="popup-content">
+                    <p class="brand">Lorem ipsum dolor sit.</p>
+                    <span class="brand-price">$ 120.00</span>
+                    <hr class="divider">
+                    <h2 class="des">Woman Black Quirky</h2>
+                    <p class="price">Brand: lorem</p>
+                    <h3 class="title">Description:</h3>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, excepturi.</p>
+                    <h4>Size:</h4>
+                    <div class="size-selection">
+                       <p class="selected active">XS</p>
+                       <p class="selected">S</p>
+                       <p class="selected">M</p>
+                       <p class="selected">L</p>
+                       <p class="selected">XL</p>
+                    </div>
+                    <div class="color-container">
+                       <h3 class="title">Color:</h3>
+                       <div class="colors">
+                          <span class="color active" primary="#fff" color="white"></span>
+                          <span class="color" primary="#444" color="black"></span>
+                          <span class="color" primary="#29b864" color="green"></span>
+                       </div>
+                    </div>
+                    <p>Quantity: <input class="quan" type="text" value="1"></p>
+                    <button type="button" class="button-cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart</button>
+                    <a href="#" class="button-buy-now">Buy it now</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="product">
+     <div class="product-card">
+        <h2 class="name">lorem</h2>
+        <span class="price">$100.00</span>
+        <a class="popup-btn">Quick View</a>
+        <img src="./img/15 (2).jpg" class="product-img" alt="">
+     </div>
+     <div class="popup-view">
+        <div class="popup-card">
+           <a><i class="fas fa-times close-btn"></i></a>
+           <div class="popup-row">
+              <div class="col">
+                 <div class="slider">
+                    <div class="products">
+                       <div class="container-slider-popup">
+                          <!-- Full-width images with number text -->
+                          <div class="mySlides">
+                             <div class="numbertext">1 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">2 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">3 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">4 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">5 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">6 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <!-- Next and previous buttons -->
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          <!-- Thumbnail images -->
+                          <div class="row-mini">
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="col">
+                 <div class="popup-content">
+                    <p class="brand">Lorem ipsum dolor sit.</p>
+                    <span class="brand-price">$ 120.00</span>
+                    <hr class="divider">
+                    <h2>Woman Black Quirky</h2>
+                    <p class="price">Brand: lorem</p>
+                    <h3 class="title">Description:</h3>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, excepturi.</p>
+                    <h4>Size:</h4>
+                    <div class="size-selection">
+                       <p class="selected active">XS</p>
+                       <p class="selected">S</p>
+                       <p class="selected">M</p>
+                       <p class="selected">L</p>
+                       <p class="selected">XL</p>
+                    </div>
+                    <div class="color-container">
+                       <h3 class="title">Color:</h3>
+                       <div class="colors">
+                          <span class="color active" primary="#fff" color="white"></span>
+                          <span class="color" primary="#444" color="black"></span>
+                          <span class="color" primary="#29b864" color="green"></span>
+                       </div>
+                    </div>
+                    <p>Quantity: <input class="quan"  type="text" value="1"></p>
+                    <button type="button" class="button-cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart</button>
+                    <a href="#" class="button-buy-now">Buy it now</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="product">
+     <div class="product-card">
+        <h2 class="name">lorem</h2>
+        <span class="price">$250.00</span>
+        <a class="popup-btn">Quick View</a>
+        <img src="./img/15 (2).jpg" class="product-img" alt="">
+     </div>
+     <div class="popup-view">
+        <div class="popup-card">
+           <a><i class="fas fa-times close-btn"></i></a>
+           <div class="popup-row">
+              <div class="col">
+                 <div class="slider">
+                    <div class="products">
+                       <div class="container-slider-popup">
+                          <!-- Full-width images with number text -->
+                          <div class="mySlides">
+                             <div class="numbertext">1 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">2 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">3 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">4 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">5 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">6 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <!-- Next and previous buttons -->
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          <!-- Thumbnail images -->
+                          <div class="row-mini">
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="col">
+                 <div class="popup-content">
+                    <p class="brand">Lorem ipsum dolor sit.</p>
+                    <span class="brand-price">$ 120.00</span>
+                    <hr class="divider">
+                    <h2>Woman Black Quirky</h2>
+                    <p class="price">Brand: lorem</p>
+                    <h3 class="title">Description:</h3>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, excepturi.</p>
+                    <h4>Size:</h4>
+                    <div class="size-selection">
+                       <p class="selected active">XS</p>
+                       <p class="selected">S</p>
+                       <p class="selected">M</p>
+                       <p class="selected">L</p>
+                       <p class="selected">XL</p>
+                    </div>
+                    <div class="color-container">
+                       <h3 class="title">Color:</h3>
+                       <div class="colors">
+                          <span class="color active" primary="#fff" color="white"></span>
+                          <span class="color" primary="#444" color="black"></span>
+                          <span class="color" primary="#29b864" color="green"></span>
+                       </div>
+                    </div>
+                    <p>Quantity: <input class="quan"  type="text" value="1"></p>
+                    <button type="button" class="button-cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart</button>
+                    <a href="#" class="button-buy-now">Buy it now</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <div class="product">
+     <div class="product-card">
+        <h2 class="name">lorem</h2>
+        <span class="price">$250.00</span>
+        <a class="popup-btn">Quick View</a>
+        <img src="./img/15 (2).jpg" class="product-img" alt="">
+     </div>
+     <div class="popup-view">
+        <div class="popup-card">
+           <a><i class="fas fa-times close-btn"></i></a>
+           <div class="popup-row">
+              <div class="col">
+                 <div class="slider">
+                    <div class="products">
+                       <div class="container-slider-popup">
+                          <!-- Full-width images with number text -->
+                          <div class="mySlides">
+                             <div class="numbertext">1 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">2 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">3 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">4 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">5 / 6</div>
+                             <img src="./img/15 (2).jpg" style="width:100%">
+                          </div>
+                          <div class="mySlides">
+                             <div class="numbertext">6 / 6</div>
+                             <img src="./img/15 (3).jpg" style="width:100%">
+                          </div>
+                          <!-- Next and previous buttons -->
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          <!-- Thumbnail images -->
+                          <div class="row-mini">
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (2).jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                             </div>
+                             <div class="column">
+                                <img class="demo cursor" src="./img/15 (3).jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="col">
+                 <div class="popup-content">
+                    <p class="brand">Lorem ipsum dolor sit.</p>
+                    <span class="brand-price">$ 120.00</span>
+                    <hr class="divider">
+                    <h2>Woman Black Quirky</h2>
+                    <p class="price">Brand: lorem</p>
+                    <h3 class="title">Description:</h3>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, excepturi.</p>
+                    <h4>Size:</h4>
+                    <div class="size-selection">
+                       <p class="selected active">XS</p>
+                       <p class="selected">S</p>
+                       <p class="selected">M</p>
+                       <p class="selected">L</p>
+                       <p class="selected">XL</p>
+                    </div>
+                    <div class="color-container">
+                       <h3 class="title">Color:</h3>
+                       <div class="colors">
+                          <span class="color active" primary="#fff" color="white"></span>
+                          <span class="color" primary="#444" color="black"></span>
+                          <span class="color" primary="#29b864" color="green"></span>
+                       </div>
+                    </div>
+                    <p>Quantity: <input class="quan"  type="text" value="1"></p>
+                    <button type="button" class="button-cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart</button>
+                    <a href="#" class="button-buy-now">Buy it now</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+   </div>  {% endcomment %}
+</div> 
+
+{% endblock content %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="{% static 'js/multi_js.js' %} "></script>
+
+    <script>
+      const rangeInput = document.querySelectorAll(".range-input input"),
+priceInput = document.querySelectorAll(".price-input input"),
+range = document.querySelector(".slider .progress");
+let priceGap = 1000;
+
+priceInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minPrice = parseInt(priceInput[0].value),
+        maxPrice = parseInt(priceInput[1].value);
+        
+        if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
+            if(e.target.className === "input-min"){
+                rangeInput[0].value = minPrice;
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+            }else{
+                rangeInput[1].value = maxPrice;
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+            }
+        }
+    });
+});
+
+rangeInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minVal = parseInt(rangeInput[0].value),
+        maxVal = parseInt(rangeInput[1].value);
+
+        if((maxVal - minVal) < priceGap){
+            if(e.target.className === "range-min"){
+                rangeInput[0].value = maxVal - priceGap
+            }else{
+                rangeInput[1].value = minVal + priceGap;
+            }
+        }else{
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+    });
+});
+
+
+// popup
+var popupViews = document.querySelectorAll('.popup-view');
+var popupBtns = document.querySelectorAll('.popup-btn');
+var closeBtns = document.querySelectorAll('.close-btn');
+
+//javascript for quick view button
+var popup = function(popupClick){
+  popupViews[popupClick].classList.add('active');
+}
+
+popupBtns.forEach((popupBtn, i) => {
+  popupBtn.addEventListener("click", () => {
+    popup(i);
+  });
+});
+
+//javascript for close button
+closeBtns.forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    popupViews.forEach((popupView) => {
+      popupView.classList.remove('active');
+    });
+  });
+});
+
+function clickme(smallImg) {
+
+    var fullImg = document.getElementById("imagebox");
+    fullImg.src = smallImg.src;
+}
+
+// filter
+function getVals(){
+  // Get slider values
+  let parent = this.parentNode;
+  let slides = parent.getElementsByTagName("input");
+    let slide1 = parseFloat( slides[0].value );
+    let slide2 = parseFloat( slides[1].value );
+  // Neither slider will clip the other, so make sure we determine which is larger
+  if( slide1 > slide2 ){ let tmp = slide2; slide2 = slide1; slide1 = tmp; }
+  
+  let displayElement = parent.getElementsByClassName("rangeValues")[0];
+      displayElement.innerHTML = "$" + slide1 + " - $" + slide2;
+}
+
+window.onload = function(){
+  // Initialize Sliders
+  let sliderSections = document.getElementsByClassName("range-slider");
+      for( let x = 0; x < sliderSections.length; x++ ){
+        let sliders = sliderSections[x].getElementsByTagName("input");
+        for( let y = 0; y < sliders.length; y++ ){
+          if( sliders[y].type ==="range" ){
+            sliders[y].oninput = getVals;
+            // Manually trigger event first time to display values
+            sliders[y].oninput();
+          }
+        }
+      }
+}
+
+// show filter
+// let showFilter = document.querySelector(".filter-div");
+// let sideBar = document.querySelector(".sidebar-container");
+// showFilter.addEventListener("click", () =>{
+//   if(sideBar.style.display === 'none'){
+//     sideBar.style.display = 'block'
+//   } else{
+//     sideBar.style.display = 'none'
+//   }
+// })
+
+// popup filter
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+// size and color popup
+const sizes = document.querySelectorAll('.selected');
+const colors = document.querySelectorAll('.color');
+const gradients = document.querySelectorAll('.gradient');
+
+let prevColor = "blue";
+let animationEnd = true;
+
+function changeSize(){
+    sizes.forEach(size => size.classList.remove('active'));
+    this.classList.add('active');
+}
+
+function changeColor(){
+    if(!animationEnd) return;
+    let primary = this.getAttribute('primary');
+    let color = this.getAttribute('color');
+    let gradient = document.querySelector(`.gradient[color="${color}"]`);
+    let prevGradient = document.querySelector(`.gradient[color="${prevColor}"]`);
+
+    if(color == prevColor) return;
+
+    colors.forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+
+    document.documentElement.style.setProperty('--primary', primary);
+    
+    shoes.forEach(s => s.classList.remove('show'));
+    shoe.classList.add('show');
+
+    gradients.forEach(g => g.classList.remove('first', 'second'));
+    gradient.classList.add('first');
+    prevGradient.classList.add('second');
+
+    prevColor = color;
+    animationEnd = false;
+
+    gradient.addEventListener('animationend', () => {
+        animationEnd = true;
+    })
+}
+
+sizes.forEach(size => size.addEventListener('click', changeSize));
+colors.forEach(c => c.addEventListener('click', changeColor));
+
+// preloader
+
+let loader = document.getElementById('preloader');
+window.addEventListener('load', function() {
+    loader.style.display = 'none'
+})
+
+    </script>
+</body>
+</html>

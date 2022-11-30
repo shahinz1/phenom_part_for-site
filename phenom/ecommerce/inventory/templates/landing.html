@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Landing{% endblock title %}
+{% block content %}
+<div class="swiper-container">
+   <div class="swiper-wrapper">
+      <!-- Slide1 -->
+      {% for x in data %}
+      <div class="swiper-slide">
+         <div class="swiper-item" style="#"></div>
+         <div class="side-bar">
+            <div class="menu">
+               <div class="item">{{x.name}}<a href="#"></a></div>
+            </div>
+         </div>
+         <span class="number">01</span>
+         <div class="slide-text">
+            <h1>{{x.slug}}</h1>
+            <p>Clothing stores Limited</p>
+            <button class="btn">Buy</button>
+         </div>
+      </div>
+      {% endfor %}
+      <!-- END Slide1 -->
+   </div>
+   <div class="swiper-pagination"></div>
+   <div class="swiper-arrows">
+      <div class="swiper-button-prev"><span></span></div>
+      <div class="swiper-button-next"><span></span></div>
+   </div>
+</div>
+   
+   <!-- section 3 -->
+   <h1 class="section-title">categories</h1>
+   <div class="slide-container">
+     <i class='bx bx-left-arrow-alt' id="slide-left"></i>
+   <section class="container-carousel" id="slider">
+   
+      {% for products in data %}
+   <div class="thumbnail">
+      <div class="product">
+         <div class="product-card">
+            <h2 class="name">{{products.name}}</h2>
+            <a href="{{products.slug}}"><img src="../images/5theway-vietnam-OCrGGDgOhcI-unsplash.jpg" class="product-img" alt=""></a>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
+   
+   {% comment %} <div class="thumbnail">
+     <div class="product">
+       <div class="product-card">
+         <h2 class="name">Hats</h2>
+         <a href="#"><img src="../images/rocknwool-JgDbCod2gg4-unsplash.jpg" class="product-img" alt=""></a>
+       </div>
+     </div>
+   </div>
+   
+   <div class="thumbnail">
+     <div class="product">
+       <div class="product-card">
+         <h2 class="name">Chinos</h2>
+         <a href="#"><img src="../images/seth-doyle-R5tHd-aYmPs-unsplash.jpg" class="product-img" alt=""></a>
+       </div>
+     </div>
+   </div>
+   
+   <div class="thumbnail">
+     <div class="product">
+       <div class="product-card">
+         <h2 class="name">lorem</h2>
+         <a href="#"><img src="../images/damian-barczak-Hh8Gx8Uy6CA-unsplash.jpg" class="product-img" alt=""></a>
+       </div>
+     </div>
+   </div>
+   
+   <div class="thumbnail">
+     <div class="product">
+       <div class="product-card">
+         <h2 class="name">lorem</h2>
+         <a href=""><img src="../images/aromateec-EMzhgIxjPgI-unsplash.jpg" class="product-img" alt=""></a>
+       </div>
+     </div>
+   </div> {% endcomment %}
+   
+   </section>
+   <i class='bx bx-right-arrow-alt' id="slide-right"></i>
+   </div>
+   
+   <!-- section 4 -->
+   <h1 class="section-title">Products</h1>
+   <div class="container-pro-up">
+     {% for h in data %}
+      <div class="product-popup">
+         <div class="product__list">
+            <img class="product__img" src="{% static '/media/2.jpg' %}" alt="">
+            <span class="product__viewBtn">{{h.category__name}}</span>
+         </div>
+      </div>
+      <div class="modal"></div>
+      <div class="modal__content">
+         <i class="modal__close far fa-times-circle"></i>
+         <div class="modal__left">
+            <img class="modal__img" src="{{h.product__media__img_url}}" alt="">
+         </div>
+         <div class="modal__right">
+            <h1 class="popup-brandName">{{h.name}}</h1>
+            <h2 class="popup-collectonName">{{h.category__name}}</h2>
+            <p class="popup-product-detail">{{h.description}}</p>
+            <ul class="popup-moreInfo">
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+               <li>Lorem ipsum dolor sit amet consectetur</li>
+            </ul>
+            <h1 class="popup-availableSizes">available sizes:</h1>
+            <ul class="popup-sizes">
+               <li>s</li>
+               <li>m</li>
+               <li>l</li>
+               <li>xl</li>
+               <li>xxl</li>
+            </ul>
+            <h1 class="popup-availableColor">available colors:</h1>
+            <div class="popup-colors-div">
+               <span class="availableColor" primary="#fff" color="white"></span>
+               <span class="availableColor" primary="#000" color="black"></span>
+               <span class="availableColor" primary="#29b864" color="green"></span>
+               <span class="availableColor" primary="#0800ff" color="blue"></span>
+               <span class="availableColor" primary="#444" color="gray"></span>
+            </div>
+            <span class="popup-price">{{h.product__store_price}}</span>
+            <a href="" class="popup-buy">buy now</a>
+         </div>
+        </div>
+        {% endfor %}
+      </div>
+   
+     
+   <!-- mini section -->
+   <h1 class="section-title">the culture</h1>
+   <div class="maindiv">
+     <video autoplay muted loop src="../images/Pexels Videos 1154850.mp4" class="slideshow-img"></video>
+     <div class="text-collection">
+       <h1>the culture</h1>
+       <h4>phenominU active wear</h4>
+       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, aliquam.</p>
+       <div class="more">
+         <a href="#">shop now</a>
+         <a href="#">Explore more</a>
+       </div>
+     </div>
+     <img class="slideshow-img" src="../images/bg-1.jpg" alt="">
+     <video autoplay muted loop src="../images/production ID_4150338.mp4" class="slideshow-img"></video>
+   </div>
+   
+   <!-- section 5 -->
+   <h1 class="section-title">BLAQ collection</h1>
+   <section class="black-collection-container">
+   <div class="black-collection">
+     <div class="black-about-container">
+         <div class="black-image-container">
+             <img src="../images/7.jpg" alt="">
+         </div>
+         <div class="black-text-container">
+             <h1>the PhenominU blaq collection</h1>
+             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis nihil ipsum ducimus neque dolor! Dicta fuga ullam facere ipsum quibusdam!</p>
+             <a href="../Collection/index.html">Read More</a>
+         </div>
+     </div>
+   </div>
+   </section>
+   
+   
+   <h1 class="section-title">the wedding collection</h1>
+   <div class="bg-show">
+     <div class="link">
+         <a href="#" class="link_a">play <img src="../images/right-chevron.png" alt=""></a>
+     </div>
+     <div class="overlay">
+         <div class="image">
+             <img src="../images/x.png" alt="" class="cancel">
+             <video loop muted src="../images/furniture.mp4" id="video"></video>
+             <div class="bg-player">
+                 <img class="player" src="../images/play.png" alt="">
+             </div>
+         </div>
+     </div>
+   </div>   
+{% endblock content %}
+{% block js %}
+   <script src="{% static '/js/fetch.js' %}"></script>
+   <script src="{% static '/js/modernizr.js' %}"></script>
+   <script src="{% static '/js/jquery-2.1.1.js' %}"></script>
+{% endblock js %}

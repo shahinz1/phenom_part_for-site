@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <main id="cart-container">
+        <h2 class="cart-header">Cart</h2>
+          <div class="basket">
+            <div class="basket-labels">
+              <ul>
+                <li class="item-cart item-heading">Item</li>
+                <li class="price-cart">Price</li>
+                <li class="quantity-cart">Quantity</li>
+                <li class="subtotal-cart">Subtotal</li>
+              </ul>
+            </div>
+            {% for item in basket %}
+            {% with product=item.product %}
+            <div class="basket-product">
+              <div data-index="{{product.id}}" class="item-cart">
+                <div class="product-image-cart">
+                  <img src="../images/15 (3).jpg" alt="Placholder Image 2" class="product-frame">
+                </div>
+                <div class="product-details-cart">
+                  <h1><strong><span class="item-quantity-cart">1</span> x Whistles</strong> {{d.name}}</h1>
+                  <p>Navy, Size <strong class="item-size-cart">XS</strong></p>
+                  <p>Color <strong class="item-color-cart">White</strong></p>
+                  <button class="change-size-cart">change</button>
+                </div>
+                <div class="changed-box">
+                  <div class="changed-items">
+                      <h1>CONFIGURE <span> 'BOYFRIEND SHIRT DRESS IN WHITE' </span></h1>
+                      <hr>
+                      <p>Size</p>
+                      <ul>
+                          <li><a href="#">xs</a></li>
+                          <li><a href="#">s</a></li>
+                          <li><a href="#">m</a></li>
+                          <li><a href="#">l</a></li>
+                          <li><a href="#">xl</a></li>
+                      </ul>
+                      <p>Color</p>
+                      <ul>
+                          <li><a href="#">Black</a></li>
+                          <li><a href="#">White</a></li>
+                          <li><a href="#">Green</a></li>
+                          <li><a href="#">Blue</a></li>
+                          <li><a href="#">Gray</a></li>
+                      </ul>
+                      <div class="save-change-btn">
+                          <a href="#">save</a>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="price-cart">26.00</div>
+              <div class="quantity-cart">
+                <input type="number" value="1" min="1" class="quantity-field">
+              </div>
+              <div class="subtotal-cart">26.00</div>
+              <div class="remove">
+                <i class='bx bx-trash' ></i>
+              </div>
+              {% endwith %}
+              {% endfor %}
+            </div>
+          </div>
+          <aside id="cart-aside">
+            <div class="summary">
+              <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+              <div class="summary-subtotal">
+                <div class="subtotal-title">Subtotal</div>
+                <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
+                <div class="summary-promo hide-cart">
+                  <div class="promo-title">Promotion</div>
+                  <div class="promo-value final-value" id="basket-promo"></div>
+                </div>
+              </div>
+              <div class="summary-delivery">
+                <select name="delivery-collection" class="summary-delivery-selection">
+                    <option value="0" selected="selected">Select Collection or Delivery</option>
+                  <option value="collection">Collection</option>
+                  <option value="first-class">Royal Mail 1st Class</option>
+                  <option value="second-class">Royal Mail 2nd Class</option>
+                  <option value="signed-for">Royal Mail Special Delivery</option>
+                </select>
+              </div>
+              <div class="basket-module">
+                  <label for="promo-code">Enter a promotional code</label>
+                  <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+                  <button class="promo-code-cta">Apply</button>
+                  <h4 class="promo-error"></h4>
+                </div>
+
+              <div class="summary-total">
+                <div class="total-title">Total</div>
+                <div class="total-value final-value" id="basket-total">130.00</div>
+              </div>
+              <div class="summary-checkout">
+                <button class="checkout-cta">Go to Secure Checkout</button>
+              </div>
+            </div>
+          </aside>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="{% static '/JavaScript.js' %} "></script>
+
+        <script>
+
+          /* Set values + misc */
+  let promoCode;
+  let promoPrice;
+  let fadeTime = 300;
+
+  /* Assign actions */
+  $('.quantity-cart input').change(function() {
+    updateQuantity(this);
+  });
+
+  $('.remove i').click(function() {
+    removeItem(this);
+  });
+
+  $(document).ready(function() {
+    updateSumItems();
+  });
+
+  $('.promo-code-cta').click(function() {
+
+    promoCode = $('#promo-code').val();
+    let err = document.querySelector('.promo-error');
+
+    if (promoCode == '10off' || promoCode == '10OFF') {
+      //If promoPrice has no value, set it as 10 for the 10OFF promocode
+      if (!promoPrice) {
+        promoPrice = 10;
+        err.innerText = "Your Promotion Code Is correct"
+        err.style.display = 'block'
+        err.style.color = 'green'
+      } 
+    } else{
+      err.innerText = "Your Promotion Code Is Incorrect"
+      err.style.display = 'block'
+      err.style.color = 'red'
+      promoPrice = 0;
+    }
+    //If there is a promoPrice that has been set (it means there is a valid promoCode input) show promo
+    if (promoPrice) {
+      $('.summary-promo').removeClass('hide-cart');
+      $('.promo-value').text(promoPrice.toFixed(2));
+      recalculateCart(true);
+    }
+  });
+
+  /* Recalculate cart */
+  function recalculateCart(onlyTotal) {
+    let err = document.querySelector('.promo-error');
+  let subtotal = 0;
+
+    /* Sum up row totals */
+    $('.basket-product').each(function() {
+      subtotal += parseFloat($(this).children('.subtotal-cart').text());
+    });
+
+    /* Calculate totals */
+  let total = subtotal;
+
+    //If there is a valid promoCode, and subtotal < 10 subtract from total
+  let promoPrice = parseFloat($('.promo-value').text());
+    if (promoPrice) {
+      if (subtotal >= 10) {
+        total -= promoPrice;
+      } else {
+        err.innerText = "Order must be more than $10 for Promo code to apply."
+        err.style.display = 'block'
+        err.style.color = 'red'
+        $('.summary-promo').addClass('hide-cart');
+      }
+    }
+
+    /*If switch for update only total, update only total display*/
+    if (onlyTotal) {
+      /* Update total display */
+      $('.total-value').fadeOut(fadeTime, function() {
+        $('#basket-total').html(total.toFixed(2));
+        $('.total-value').fadeIn(fadeTime);
+      });
+    } else {
+      /* Update summary display. */
+      $('.final-value').fadeOut(fadeTime, function() {
+        $('#basket-subtotal').html(subtotal.toFixed(2));
+        $('#basket-total').html(total.toFixed(2));
+        if (total == 0) {
+          $('.checkout-cta').fadeOut(fadeTime);
+        } else {
+          $('.checkout-cta').fadeIn(fadeTime);
+        }
+        $('.final-value').fadeIn(fadeTime);
+      });
+    }
+  }
+
+  /* Update quantity */
+  function updateQuantity(quantityInput) {
+    /* Calculate line price */
+  let productRow = $(quantityInput).parent().parent();
+  let price = parseFloat(productRow.children('.price-cart').text());
+  let quantity = $(quantityInput).val();
+  let linePrice = price * quantity;
+
+    /* Update line price display and recalc cart totals */
+    productRow.children('.subtotal-cart').each(function() {
+      $(this).fadeOut(fadeTime, function() {
+        $(this).text(linePrice.toFixed(2));
+        recalculateCart();
+        $(this).fadeIn(fadeTime);
+      });
+    });
+
+    productRow.find('.item-quantity-cart').text(quantity);
+    updateSumItems();
+  }
+
+  function updateSumItems() {
+  let sumItems = 0;
+    $('.quantity-cart input').each(function() {
+      sumItems += parseInt($(this).val());
+    });
+    $('.total-items').text(sumItems);
+  }
+
+  /* Remove item from cart */
+  function removeItem(removeButton) {
+    /* Remove row from DOM and recalc cart total */
+  let productRow = $(removeButton).parent().parent();
+    productRow.slideUp(fadeTime, function() {
+      productRow.remove();
+      recalculateCart();
+      updateSumItems();
+    });
+  }
+
+
+  // change item
+  let changedBtns = document.querySelectorAll('.change-size-cart');
+  changedBtns.forEach((btn, index) => btn.addEventListener('click', () => show(index)))
+    function show (index) {
+      let showChange = document.querySelectorAll('.changed-box')[index];
+      if(showChange.style.display === 'none') {
+          showChange.style.display = 'block'
+      } else{
+          showChange.style.display = 'none'
+    }
+  }
+
+  // apply changes
+
+
+
+  // preloader
+
+  let loader = document.getElementById('preloader');
+  window.addEventListener('load', function() {
+      loader.style.display = 'none'
+  })
+        </script>
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+[
+  "ecommerce/drf/tests/test_category.py::test_get_all_categories",
+  "ecommerce/drf/tests/test_product.py::test_get_inventory_by_web_id",
+  "ecommerce/drf/tests/test_product.py::test_get_product_by_category",
+  "ecommerce/inventory/tests/test_category.py::test_create_category",
+  "ecommerce/inventory/tests/test_category.py::test_create_category_with_child",
+  "ecommerce/inventory/tests/test_products.py::test_insert_single_product_with_sub_category"
+]

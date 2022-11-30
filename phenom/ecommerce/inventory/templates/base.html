@@ -1,0 +1,495 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- box icon -->
+    <link rel="stylesheet" href="{% static '/css/MainStylesheet.css' %} ">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.0/swiper-bundle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- js_cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.0/swiper-bundle.js"></script>
+    {% block cdn %}
+    {% endblock cdn %}
+    <link rel="shortcut icon" href="{% static '/media/IMG_1823.PNG' %} ">
+</head>
+<body>
+  <!-- navbar starts -->
+<div class = "main-wrapper">
+  <nav class = "navbar">
+    <div class = "brand-and-icon">
+      <!-- <a  href = "index.html" class = "navbar-brand"><img src="../images/logo2.png" class="brand-logo-2" alt=""></a> -->
+      <a href = "index.html"><img src="{% static '/media/logo1.png' %}" class="brand-logo" alt=""></a>
+      <button type = "button" class = "navbar-toggler">
+        <i class = "fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div class = "navbar-collapse">
+      <ul class = "navbar-nav">
+        <li>
+          <a href = "#" class = "menu-link">
+            men
+          </a>
+          <div class = "sub-menu">
+            <!-- item -->
+              <div class = "sub-menu-item">
+                <img src = "{% static '/media/anomaly-WWesmHEgXDs-unsplash.jpg' %}" alt = "product image">
+              </div>
+            <!-- end of item -->
+          <!-- item -->
+          <div class = "sub-menu-item">
+            <h4>men collection</h4>
+            <hr class="divider">
+            <ul>
+              <li><a href = "#">t-shirts & tops</a></li>
+              <li><a href = "#">hoodies & sweaters</a></li>
+              <li><a href = "#">jackets & vests</a></li>
+              <li><a href = "#">pants & shorts</a></li>
+              <li><a href = "#">jogging suits</a></li>
+              <li><a href = "#">matching sets</a></li>
+            </ul>
+          </div>
+          <!-- end of item -->
+          <!-- item -->
+          <div class = "sub-menu-item">
+            <h4>accessories</h4>
+            <hr class="divider">
+            <ul>
+              <li><a href = "#">masks</a></li>
+              <li><a href = "#">hats & beanies</a></li>
+              <li><a href = "#">socks</a></li>
+              <li><a href = "#">gloves</a></li>
+              <li><a href = "#">bags & backpacks</a></li>
+              <li><a href = "#">water bottles</a></li>
+            </ul>
+          </div>
+          <!-- end of item -->
+          <div class = "sub-menu-item">
+            <h4>categories</h4>
+            <hr class="divider">
+            <ul>
+              <li><a href = "#">shoes</a></li>
+              <li><a href = "#">hats</a></li>
+              <li><a href = "#">pants</a></li>
+              <li><a href = "#">t-shirts</a></li>
+              <li><a href = "#">accessories</a></li>
+            </ul>
+          </div>
+          <!-- end of item -->
+
+        </div>
+        </li>
+
+        <li>
+          <a href = "#" class = "menu-link">
+            women
+          </a>
+          <div class = "sub-menu">
+              <!-- item -->
+              <div class = "sub-menu-item">
+                <img src = "../images/kristina-petrick-QDDV2XO8Q5I-unsplash.jpg" alt = "product image">
+              </div>
+              <!-- end of item -->
+            <!-- item -->
+            <div class = "sub-menu-item">
+              <h4>women collection</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">sport bras</a></li>
+                <li><a href = "#">t-shirts & tops</a></li>
+                <li><a href = "#">hoodies & sweaters</a></li>
+                <li><a href = "#">jackets & vests</a></li>
+                <li><a href = "#">pants & shorts</a></li>
+                <li><a href = "#">leggings & tights</a></li>
+                <li><a href = "#">jogging suits</a></li>
+                <li><a href = "#">matching suits</a></li>
+              </ul>
+            </div>
+            <!-- end of item -->
+            <!-- item -->
+
+            <div class = "sub-menu-item">
+              <h4>accessories</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">masks</a></li>
+                <li><a href = "#">hats & beanies</a></li>
+                <li><a href = "#">socks</a></li>
+                <li><a href = "#">gloves</a></li>
+                <li><a href = "#">bags & backpacks</a></li>
+                <li><a href = "#">water bottles</a></li>
+              </ul>
+            </div>
+
+            <div class = "sub-menu-item">
+              <h4>categories</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">shoes</a></li>
+                <li><a href = "#">hats</a></li>
+                <li><a href = "#">pants</a></li>
+                <li><a href = "#">t-shirts</a></li>
+                <li><a href = "#">accessories</a></li>
+              </ul>
+            </div>
+
+            <!-- end of item -->
+
+          </div>
+        </li>
+
+        <li>
+          <a href = "#" class = "menu-link">
+            special collections
+          </a>
+          <div class = "sub-menu">
+            <!-- item -->
+            <div class = "sub-menu-item">
+              <img src = "../images/kristina-petrick-QDDV2XO8Q5I-unsplash.jpg" alt = "product image">
+            </div>
+            <!-- end of item -->
+            <!-- item -->
+            <div class = "sub-menu-item">
+              <h4>wedding collection</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">sport bras</a></li>
+                <li><a href = "#">t-shirts & tops</a></li>
+                <li><a href = "#">hoodies & sweaters</a></li>
+                <li><a href = "#">jackets & vests</a></li>
+                <li><a href = "#">pants & shorts</a></li>
+                <li><a href = "#">leggings & tights</a></li>
+                <li><a href = "#">jogging suits</a></li>
+                <li><a href = "#">matching suits</a></li>
+              </ul>
+            </div>
+            <!-- end of item -->
+            <!-- item -->
+
+            <div class = "sub-menu-item">
+              <h4>culture collection</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">masks</a></li>
+                <li><a href = "#">hats & beanies</a></li>
+                <li><a href = "#">socks</a></li>
+                <li><a href = "#">gloves</a></li>
+                <li><a href = "#">bags & backpacks</a></li>
+                <li><a href = "#">water bottles</a></li>
+              </ul>
+            </div>
+
+            <div class = "sub-menu-item">
+              <h4>categories</h4>
+              <hr class="divider">
+              <ul>
+                <li><a href = "#">shoes</a></li>
+                <li><a href = "#">hats</a></li>
+                <li><a href = "#">pants</a></li>
+                <li><a href = "#">t-shirts</a></li>
+                <li><a href = "#">accessories</a></li>
+              </ul>
+            </div>
+
+            <!-- end of item -->
+
+          </div>
+        </li>
+
+        <li>
+          <a href = "../About/about us.html">about us</a>
+        </li>
+        <li>
+          <a href = "../Contact/contact us.html">contact</a>
+        </li>
+      </ul>
+            <div class="search-wrapper">
+        <input type="text" class="search-box-wrapper" placeholder="Search">
+        <button class="search-btn-wrapper">Search</button>
+        <div class="icons-wrapper">
+          <a class="search-icon" href="#"><i class='bx bx-search'></i></a>
+          <a href="#" class="store33">Store 33</a>
+          <a href="#" class="login-btn">Log in</a>
+          <div class="cart-btn">
+          <span class="nav-icon">
+            <a href="#"><img class="cart-img" src="../images/square-shopping-bag-with-handle-svgrepo-com.svg" alt=""></a>
+          </span>
+          <div class="cart-items">0</div>
+          </div>
+          </div>
+    </div> 
+    </div>
+
+    <div class="navbar-icons">
+      <input type="search" class="search-icon" placeholder="Search">
+      <a href="#" class="store33">Store 33</a>
+      <a href="../Login Signup/index.html" class="login-btn">Log in</a>
+      <div class="cart-btn">
+        <a href="../cart/index.html"><img class="cart-img" src="../images/square-shopping-bag-with-handle-svgrepo-com.svg" alt=""></a>
+      <div class="cart-items"><a href="#">0</a></div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- navbar ends -->
+
+{% block content %}
+{% endblock content %}
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="email-form">
+    <h1>subscribe to have best discount</h1>
+    <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="newsletter">
+      <input type="text" class="input" placeholder="Enter Your Email">
+      <i class="fas fa-envelope"></i>
+      <div><input type="submit" value="Subscribe" class="btn"></div>
+    </div>
+  </div>	
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="bg-img">
+          <div class="content">
+            <!-- <img class="form-img" src="./images/cropped-IMG_1544.png" alt=""> -->
+            <form action="#">
+                <div class="field">
+                  <span class="fa fa-user"></span>
+                  <input type="text" required placeholder="Email or Phone">
+                </div>
+                <div class="field space">
+                  <span class="fa fa-lock"></span>
+                  <input type="password" class="pass-key" required placeholder="Password">
+                  <span class="show">SHOW</span>
+                </div>
+                <div class="pass">
+                  <a href="#">Forgot Password?</a>
+                </div>
+                <div class="field">
+                  <input type="submit" value="LOGIN">
+                </div>
+            </form>
+            <div class="login">
+                <a href="#">Or login with</a>
+            </div>
+            <div class="links">
+                <div class="facebook">
+                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
+                </div>
+                <div class="google">
+                  <i class="fab fa-google"><span>Google</span></i>
+                </div>
+            </div>
+            <div class="signup">
+                Don't have account?
+                <a href="../Login Signup/signUp.html">Signup Now</a>
+            </div>
+          </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="{% static '/js/MainJavaScript.js' %}"></script>
+{% block js %}
+{% endblock js %}
+
+
+<script>
+  
+// Swiper Landing start
+ let mySwiper = new Swiper(".swiper-container", {
+    effect: "",
+    loop: false,
+    speed: 800,
+    navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+       el: ".swiper-pagination",
+       type: "bullets",
+       clickable: "true"
+    }
+  });
+ 
+ let btnNext = document.querySelector(".swiper-button-next"),
+    btnPrev = document.querySelector(".swiper-button-prev"),
+    sliderText = document.querySelectorAll(".slide-text"),
+    sliderNumber = document.querySelectorAll(".swiper-slide .number");
+ 
+    btnNext.addEventListener("click", transitionSlideNext);
+    btnPrev.addEventListener("click", transitionSlidePrev);
+  
+ function transitionSlideNext() {
+    let slideActiveText = document.querySelector(".swiper-slide-active .slide-text"),
+       slidePrevText = document.querySelector(".swiper-slide-prev .slide-text");
+     
+    slidePrevText.classList.remove("playText");
+    slideActiveText.classList.add("playText");
+ }
+  
+ function transitionSlidePrev() {
+    let slideActiveText = document.querySelector(".swiper-slide-active .slide-text"),
+      slideNextText = document.querySelector(".swiper-slide-next .slide-text");
+     
+    slideNextText.classList.remove("playText");
+    slideActiveText.classList.add("playText");
+ }
+ 
+// swiper Landing end
+
+// section 4 start
+
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal__content');
+const close = document.querySelector('.modal__close');
+const modalImg = document.querySelector('.modal__img');
+const productList = document.querySelectorAll('.product__list');
+const title = document.querySelector('.detail__title');
+const cost = document.querySelector('.detail__price');
+
+const productCost = ['£395', '£245', '£195', '£295', '£345', '£455'];
+
+productList.forEach((list, index) => {
+  const view = list.querySelector('.product__viewBtn');
+  const productImg = list.querySelector('.product__img').getAttribute('src');
+
+  view.addEventListener('click', () => {
+    modal.classList.add('modal--bg');
+    modalContent.classList.add('modal__content--show');
+    modalImg.setAttribute('src', productImg);
+    title.innerText = `product title ${index + 1}`;
+    cost.innerText = productCost[index];
+  });
+});
+
+close.addEventListener('click', () => {
+  modal.classList.remove('modal--bg');
+  modalContent.classList.remove('modal__content--show');
+});
+
+modal.addEventListener('click', () => {
+  modal.classList.remove('modal--bg');
+  modalContent.classList.remove('modal__content--show');
+});
+
+// section 4 end
+
+// section bg-show start
+ 
+  function myVideo(){
+    let links = document.querySelector(".link_a");
+    let overs = document.querySelector(".bg-show .overlay");
+    let exit = document.querySelector(".cancel");
+    let player = document.querySelector(".player");
+    let videos = document.getElementById("video");
+    links.onclick = (ed)=>{
+        ed.preventDefault();
+        overs.style.display = "block"
+    }
+    exit.onclick = ()=>{
+        overs.style.display = "none"
+    }
+    player.onclick = ()=>{
+        if(videos.paused){
+            videos.play();
+            player.src = "./images/play.png"
+        }else{
+            videos.pause();
+            player.src = "./images/pause.png"
+        }
+    }
+ }
+ myVideo();
+ 
+// section bg-show end
+
+
+//  mini section start
+ const slideShowImage = document.querySelectorAll(".maindiv .slideshow-img");
+ 
+ const nextImageDelay = 10000;
+ let currentImageCounter = 0;
+ 
+ slideShowImage[currentImageCounter].style.opacity = 1;
+ 
+ setInterval(nextImage, nextImageDelay);
+ 
+ function nextImage()
+ {
+ slideShowImage[currentImageCounter].style.zIndex = -2;
+ const tempCounter = currentImageCounter;
+ setTimeout(() => {
+     slideShowImage[tempCounter].style.opacity = 0;
+ }), 2000; 
+ currentImageCounter = (currentImageCounter + 1) % slideShowImage.length;
+ slideShowImage[currentImageCounter].style.opacity = 1;
+ slideShowImage[currentImageCounter].style.zIndex = -1;
+ }
+
+//  mini section start
+ 
+  
+// carousel section 3 start
+ 
+ let thumbnails = document.getElementsByClassName('thumbnail');
+ let slider = document.getElementById('slider');
+ 
+ let buttonRight = document.getElementById('slide-right');
+ let buttonLeft = document.getElementById('slide-left');
+ 
+ buttonLeft.addEventListener('click', function(){
+     slider.scrollLeft -= 100;
+ })
+ 
+ buttonRight.addEventListener('click', function(){
+     slider.scrollLeft += 100;
+ })
+
+  // carousel section 3 end
+
+
+</script>
+
+</body>
+</html>
+

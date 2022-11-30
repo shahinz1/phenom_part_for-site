@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="{% static '/mdeia/IMG_1823.PNG' %}" rel="icon">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static '/css/stylesheetHome.css' %}">
+  </head>
+
+<body>
+              <!-- loader -->
+              {% comment %} <div id="preloader"></div> {% endcomment %}
+
+        <!-- navbar starts -->
+        
+
+            <div class="nav">
+                <img src="../images/logo.png" class="brand-logo" alt="">
+                <div class="nav-items">
+                    <a href="#" class="store33">Store 33</a>
+                    <a href="#" class="login-btn">Log in</a>
+                    <div class="cart-btn">
+                    <span class="nav-icon">
+                      <a href="#"><img class="cart-img" src="{% static '/media/square-shopping-bag-with-handle-svgrepo-com.svg' %}" alt=""></a>
+                    </span>
+                    <div class="cart-items">0</div>
+                    </div>
+                </div>
+            </div>
+        <!-- navbar ends -->
+        <!-- Swiper -->
+            
+        <div class="swiper mySwiper swiper-h">
+          <div class="swiper-wrapper">
+            <!-- this swiper-slide must get in a loop -->
+            <div class="swiper-slide bar-container">
+              <div class="swiper mySwiper2 swiper-v">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/cesar-la-rosa-HbAddptme1Q-unsplash.jpg" alt="">
+                    <div class="side-bar">
+                      <ul class="menu"></ul>
+                    </div>                 
+                    <div class="arrow-display">
+                    <div class="arrow-right">
+                      <a href="#"><span>women</span></a>
+                    </div>
+                    <div class="arrow-left">
+                      <a href="#"><span>main</span></a>
+                    </div> 
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/henry-co-cp-VMJ-mdKs-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>                  
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/chris-ghinda-Qq-PwtIzLno-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/brooke-cagle-z1B9f48F5dc-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+             <!-- this swiper-slide must get in a loop -->
+            <div class="swiper-slide">
+              <div class="swiper mySwiper2 swiper-v">
+                <div class="swiper-wrapper">
+                  {% for A in data %}
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="{{A.collImg}}" alt="">                 
+                    <div class="arrow-display">
+                    <div class="arrow-right">
+                      <a href="{{A.slug}}"><span>{{A.name}}</span></a>
+                    </div>
+                    <div class="arrow-left">
+                      <a href="#"><span>main</span></a>
+                    </div> 
+                  </div>
+                  {% endfor %}
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/henry-co-cp-VMJ-mdKs-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>                  
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/chris-ghinda-Qq-PwtIzLno-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/brooke-cagle-z1B9f48F5dc-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper mySwiper2 swiper-v">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/kristina-petrick-QDDV2XO8Q5I-unsplash.jpg" alt="">                 
+                    <div class="arrow-display">
+                    <div class="arrow-right">
+                      <a href="#"><span>women</span></a>
+                    </div>
+                    <div class="arrow-left">
+                      <a href="#"><span>main</span></a>
+                    </div> 
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/henry-co-cp-VMJ-mdKs-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>                  
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/chris-ghinda-Qq-PwtIzLno-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/brooke-cagle-z1B9f48F5dc-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper mySwiper2 swiper-v">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">                 
+                    <div class="arrow-display">
+                    <div class="arrow-right">
+                      <a href="#"><span>women</span></a>
+                    </div>
+                    <div class="arrow-left">
+                      <a href="#"><span>main</span></a>
+                    </div> 
+                  </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/henry-co-cp-VMJ-mdKs-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>                  
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/chris-ghinda-Qq-PwtIzLno-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href=""></a><img src="../images/brooke-cagle-z1B9f48F5dc-unsplash.jpg" alt="">
+                    <div class="arrow-display">
+                      <div class="arrow-right">
+                        <a href="#"><span>women</span></a>
+                      </div>
+                      <div class="arrow-left">
+                        <a href="#"><span>main</span></a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+    
+        <!-- Swiper JS -->
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script src="{% static '/js/mainHome.js' %}" type="module"></script>
+  </body>
+</html>
+    
