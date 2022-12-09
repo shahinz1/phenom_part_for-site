@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-register">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-up-form">
+          <h2 class="title-register">Log In</h2>
+          <div class="input-field-register">
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-field-register">
+            <input type="password" placeholder="Password" />
+          </div>
+          <a href="#">HAVE YOU FORGOTTEN YOUR PASSWORD?</a>
+          <a href="#" class="btn-register transparent">
+              Log In
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content-register">
+          <h3>Registration</h3>
+          <p>
+            IF YOU STILL DON'T HAVE AN ACCOUNT, <br> USE THIS OPTION TO ACCESS THE REGISTRATION FORM.
+          </p>
+          <a href="./signUp.html" class="btn-register transparent">
+              Create Account
+          </a>
+            
+        </div>
+        <img src="img/log.svg" class="image-register" alt="" />
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+
+<!--=============== FOOTER ===============-->
+<footer class="footer"></footer>
+    
+<!--=============== JQUERY ===============-->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!--=============== SWIPER JS ===============-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.0/swiper-bundle.js"></script>
+<!--=============== MAIN JS ===============-->
+<script src="{% static '/js/main.js' %}"></script>
+<!--=============== API JS ===============-->
+<script src="#"></script>
+    
+</body>
+</html>

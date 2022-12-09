@@ -12,6 +12,9 @@ from django.contrib.sessions.models import Session
 
 #     return render (request , "landing.html", {"data": y})
 
+def Login (request):
+    return render (request , "Login.html")
+
 def Landing (request,collection):
     
     y = models.Category.objects.filter(name=collection).values(

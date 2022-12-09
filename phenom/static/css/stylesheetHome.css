@@ -23,7 +23,7 @@
   --secondray-color: #000;
   --third-color: #B80D1A;
   --forth-color: #810000;
-  
+
 
   --primary-font-color: #222;
   --secondray-font-color: #b2b2b2;
@@ -153,6 +153,10 @@ body {
 
 /* swiper starts */
 
+.swiper-pagination{
+  display: none;
+}
+
 .swiper-pagination-bullet{
   width: var(--spacing-04);
   border-radius: 0px;
@@ -216,6 +220,12 @@ body {
 .arrow-left:hover .fa-chevron-left{
   transition: all ease-in 0.3s;
   transform: translateX(-4px);
+}
+
+.arrow-display .arrow-down{
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 
 .swiper-button-next::after,
@@ -331,7 +341,7 @@ body {
   .arrow-display .arrow-right{
     left: 97%;
   }
-  
+
   .arrow-right a,.arrow-left a{
     font-size: var(--fifth-font);
   }

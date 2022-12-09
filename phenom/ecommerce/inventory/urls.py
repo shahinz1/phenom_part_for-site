@@ -7,6 +7,7 @@ app_name = 'inventory'
 urlpatterns = [
     path("", views.home),
     path("about-us" , views.AboutUs),
+    path("Login" , views.Login),
     path("<slug:collection>/", views.Landing ,name="Landing" ),
     # path("categories/", views.category),
     path("x/<slug:slug>", views.singleProduct, name="single_product"),
